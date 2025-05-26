@@ -8,6 +8,9 @@ set(CMAKE_CXX_FLAGS_RELEASE "-O3 -Wall -g -pthread -fopenmp")
 # Camera model includes
 include_directories(${CMAKE_SOURCE_DIR}/../camera_model/include)
 
+find_package(CUDA  REQUIRED)
+include_directories("${CUDA_INCLUDE_DIRS}")
+
 # OpenCV
 find_package(OpenCV REQUIRED)
 include_directories(${OpenCV_INCLUDE_DIRS})
